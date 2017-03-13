@@ -1,0 +1,6 @@
+﻿  Problem3.cpp
+c:\development\projecteuler\problem3\problem3\problem3\problem3.cpp(21): warning C4477: "printf": Die Formatzeichenfolge "%i" erfordert ein Argument vom Typ "int", das variadic-Argument "1" weist aber den Typ "__int64" auf.
+  c:\development\projecteuler\problem3\problem3\problem3\problem3.cpp(21): note: Verwenden Sie ggf. "%lli" in der Formatzeichenfolge.
+  c:\development\projecteuler\problem3\problem3\problem3\problem3.cpp(21): note: Verwenden Sie ggf. "%I64i" in der Formatzeichenfolge.
+  Problem3.vcxproj -> C:\Development\ProjectEuler\Problem3\Problem3\Debug\Problem3.exe
+  Problem3.vcxproj -> C:\Development\ProjectEuler\Problem3\Problem3\Debug\Problem3.pdb (Full PDB)
