@@ -6,9 +6,8 @@ Created on Thu Mar  9 21:39:42 2017
 """
 
 import math
-import itertools
 
-MAX_PRIME = 100 #1000000
+MAX_PRIME = 1000000
 
 #This is still the prime number generator without using better indexing
 
@@ -34,13 +33,25 @@ def generateListOfPrimes(maxPrime):
     print("    done with the list of primes \n")
     return listOfPrimes
 
+
+# Circularity ! Not ALL permutations
 def checkCircularity(i):
-    iStr = str(i)
+    #print("checkCircularity", i)
+    iStr = list(str(i))
     #print(iStr)
-    iterList = list(itertools.permutations(iStr))
-    for j in iterList:
-        print(int(j[0]))
-    #make all possible permutations and check if isPrime
+    #I'm still doing one test too many here...
+    for letter in iStr:
+        #print(letter)
+        popped = iStr.pop(0)
+        #print("popped", popped)
+        iStr.append(popped)
+        #print(iStr)
+        rotation = int(''.join(str(x) for x in iStr))
+        #print(rotation)
+        if (rotation not in primeList):
+            #print("this would returns FALSE:", rotation)
+            return False
+    return True
 
 primeList=generateListOfPrimes(MAX_PRIME)
 
@@ -48,6 +59,6 @@ circularNums = 0
 for i in primeList:
     if checkCircularity(i):
         circularNums += 1
-        print(circularNums, i)
+        print("found such a value", circularNums, i)
         
         
